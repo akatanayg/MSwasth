@@ -26,6 +26,8 @@ def main():
     if st.button("Submit"):
         # Connect to the MongoDB server
         client = pymongo.MongoClient(connection_string)
+
+        client.server_selection_timeout = None
         
         # Select a database
         db = client["Sample_DB"]
