@@ -14,8 +14,6 @@ password = urllib.parse.quote_plus("Tanay@123")
 # Construct the MongoDB connection string
 connection_string ="mongodb+srv://tanay:Tanay%40123@tanay.drqdft7.mongodb.net/"
 
-timeout_ms = 172800000  
-
 def main():
     st.title("Data Retrieval")
 
