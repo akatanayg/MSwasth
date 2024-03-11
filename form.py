@@ -6,10 +6,11 @@ import urllib.parse
 
 # Escape username and password
 username = urllib.parse.quote_plus("tanay")
-password = urllib.parse.quote_plus("tanay1234")
+password = urllib.parse.quote_plus("Tanay@123")
 
 # Construct the MongoDB connection string
-connection_string = "mongodb+srv://tanay:tanay1234@tanay.drqdft7.mongodb.net/"
+connection_string ="mongodb+srv://tanay:Tanay%40123@tanay.drqdft7.mongodb.net/"
+
 
 def main():
     st.title("Expense Reimbursement Form")
@@ -55,5 +56,5 @@ def main():
         # Display a success message
         st.success("Data submitted successfully!")
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     main()
