@@ -17,7 +17,7 @@ def main():
     # Input fields
     name = st.text_input("Name")
     reimbursement_item = st.text_input("Reimbursement (for which item)")
-    amount = st.number_input("Amount", step=1.0)
+    amount = st.number_input("Amount", step=1, value=0, format="%d")  
     status = st.radio("Status", ("Yes", "No"))
     date_issued = st.date_input("Date issued")
     date_payment_done = st.date_input("Date payment done")
