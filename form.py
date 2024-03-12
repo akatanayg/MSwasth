@@ -9,8 +9,7 @@ username = urllib.parse.quote_plus("tanay")
 password = urllib.parse.quote_plus("tanay123")
 
 # Construct the MongoDB connection string
-connection_string ="mongodb+srv://tanay:tanay123@tanay.drqdft7.mongodb.net/"
-
+connection_string = "mongodb+srv://tanay:tanay123@tanay.drqdft7.mongodb.net/"
 
 def main():
     st.title("Expense Reimbursement Form")
@@ -18,6 +17,7 @@ def main():
     # Input fields
     name = st.text_input("Name")
     reimbursement_item = st.text_input("Reimbursement (for which item)")
+    amount = st.number_input("Amount", step=1.0)
     status = st.radio("Status", ("Yes", "No"))
     date_issued = st.date_input("Date issued")
     date_payment_done = st.date_input("Date payment done")
@@ -28,10 +28,10 @@ def main():
         client = pymongo.MongoClient(connection_string)
 
         client.server_selection_timeout = None
-        
+
         # Select a database
         db = client["Sample_DB"]
-        
+
         # Select a collection within the database
         collection = db["Sample_Col"]
 
@@ -46,6 +46,7 @@ def main():
         data = {
             "Name": name,
             "Reimbursement (for which item)": reimbursement_item,
+            "Amount": amount,
             "Status": status,
             "Date issued": date_issued,
             "Date payment done": date_payment_done,
