@@ -9,10 +9,10 @@ import base64
 
 # Escape username and password
 username = urllib.parse.quote_plus("tanay")
-password = urllib.parse.quote_plus("Tanay@123")
+password = urllib.parse.quote_plus("tanay123")
 
 # Construct the MongoDB connection string
-connection_string ="mongodb+srv://tanay:Tanay%40123@tanay.drqdft7.mongodb.net/"
+connection_string ="mongodb+srv://tanay:tanay123@tanay.drqdft7.mongodb.net/"
 
 def main():
     st.title("Data Retrieval")
